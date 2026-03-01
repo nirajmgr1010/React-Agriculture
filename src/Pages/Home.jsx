@@ -11,90 +11,226 @@ function Home() {
     <div className="space-y-28">
 
       {/* 1️⃣ HERO SECTION */}
-      <section className="grid md:grid-cols-2 items-center gap-12 py-20">
-        <div>
-          <h1 className="text-5xl md:text-6xl font-bold text-[#166534] leading-tight">
-            Smart Agriculture Marketplace
-          </h1>
+      <section className="relative grid md:grid-cols-2 items-center gap-12 py-28">
+  <div>
+    <span className="bg-green-100 text-[#166534] px-4 py-1 rounded-full text-sm font-medium">
+      Sustainable • Organic • Trusted
+    </span>
 
-          <p className="mt-6 text-lg text-gray-600">
-            AgroSmart connects farmers directly with consumers,
-            ensuring fresh, organic, and sustainable agricultural products.
-          </p>
+    <h1 className="text-6xl font-extrabold mt-6 leading-tight">
+      Smart Agriculture
+      <span className="text-[#166534]"> Marketplace</span>
+    </h1>
 
-          <div className="mt-8 flex gap-4">
-            <Link
-              to="/shop"
-              className="bg-[#166534] text-white px-6 py-3 rounded-lg font-medium hover:bg-green-800 transition"
-            >
-              Explore Products
-            </Link>
-
-            <Link
-              to="/dashboard"
-              className="border border-[#166534] text-[#166534] px-6 py-3 rounded-lg font-medium hover:bg-green-50 transition"
-            >
-              View Dashboard
-            </Link>
-          </div>
-        </div>
-
-        <div>
-          <img
-            src={heroImage}
-            alt="Agriculture Banner"
-            className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
-          />
-        </div>
-      </section>
-
-      {/* 2️⃣ FEATURED PRODUCTS */}
-      <section>
-       <section>
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-semibold text-gray-800">
-      Featured Products
-    </h2>
-    <p className="text-gray-600 mt-2">
-      Fresh picks directly from trusted farmers.
+    <p className="mt-6 text-lg text-gray-600 max-w-xl">
+      Connecting farmers directly to consumers for fresher produce,
+      fair pricing, and a sustainable agricultural future.
     </p>
+
+    <div className="mt-8 flex gap-6">
+      <Link
+        to="/shop"
+        className="bg-[#166534] text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition"
+      >
+        Shop Fresh Now
+      </Link>
+
+      <Link
+        to="/about"
+        className="border border-[#166534] px-8 py-4 rounded-xl font-semibold hover:bg-green-50 transition"
+      >
+        Learn More
+      </Link>
+    </div>
   </div>
 
-  <div className="grid md:grid-cols-3 gap-8">
+  <div className="relative">
+    <img
+      src={heroImage}
+      alt="Organic Farming"
+      className="rounded-3xl shadow-2xl"
+    />
 
-    {/* Tomato */}
-    <div className="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition">
-      <img src={tomato} alt="Tomato" className="h-48 w-full object-cover" />
-      <div className="p-6">
-        <h3 className="text-lg font-semibold">Organic Tomato</h3>
-        <p className="text-gray-600 mt-2">Fresh farm tomatoes.</p>
-        <p className="text-[#166534] font-bold mt-4">Rs. 120/kg</p>
-      </div>
+    <div className="absolute -bottom-6 -left-6 bg-white shadow-lg rounded-xl p-4">
+      <p className="text-sm font-medium text-gray-600">
+        Fresh Harvest Delivered Daily 🌿
+      </p>
     </div>
-
-    {/* Spinach */}
-    <div className="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition">
-      <img src={spinach} alt="Spinach" className="h-48 w-full object-cover" />
-      <div className="p-6">
-        <h3 className="text-lg font-semibold">Fresh Spinach</h3>
-        <p className="text-gray-600 mt-2">Healthy leafy greens.</p>
-        <p className="text-[#166534] font-bold mt-4">Rs. 80/kg</p>
-      </div>
-    </div>
-
-    {/* Carrot */}
-    <div className="bg-white rounded-xl shadow-sm border overflow-hidden hover:shadow-md transition">
-      <img src={carrot} alt="Carrot" className="h-48 w-full object-cover" />
-      <div className="p-6">
-        <h3 className="text-lg font-semibold">Organic Carrot</h3>
-        <p className="text-gray-600 mt-2">Naturally grown carrots.</p>
-        <p className="text-[#166534] font-bold mt-4">Rs. 100/kg</p>
-      </div>
-    </div>
-
   </div>
 </section>
-      </section>
+
+      {/* TRUST STATS */}
+<section className="grid md:grid-cols-4 gap-8 text-center py-12 bg-green-50 rounded-2xl">
+  <div>
+    <h3 className="text-3xl font-bold text-[#166534]">500+</h3>
+    <p className="text-gray-600 mt-2">Registered Farmers</p>
+  </div>
+
+  <div>
+    <h3 className="text-3xl font-bold text-[#166534]">10K+</h3>
+    <p className="text-gray-600 mt-2">Happy Customers</p>
+  </div>
+
+  <div>
+    <h3 className="text-3xl font-bold text-[#166534]">99%</h3>
+    <p className="text-gray-600 mt-2">Customer Satisfaction</p>
+  </div>
+
+  <div>
+    <h3 className="text-3xl font-bold text-[#166534]">24/7</h3>
+    <p className="text-gray-600 mt-2">Customer Support</p>
+  </div>
+</section>
+
+
+
+
+   {/* 2️⃣ FEATURED PRODUCTS */}
+<section className="py-24 bg-gradient-to-b from-white to-green-50 rounded-3xl">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Section Header */}
+    <div className="flex justify-between items-center mb-14">
+      <div>
+        <h2 className="text-4xl font-bold text-gray-900">
+          Featured Products
+        </h2>
+        <p className="text-gray-600 mt-3">
+          Fresh organic vegetables directly from trusted farmers.
+        </p>
+      </div>
+
+      <Link
+        to="/shop"
+        className="text-[#166534] font-semibold hover:underline"
+      >
+        View All →
+      </Link>
+    </div>
+
+    {/* Products Grid */}
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+      {/* PRODUCT CARD */}
+      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+
+        {/* Image */}
+        <div className="relative overflow-hidden">
+          <img
+            src={tomato}
+            alt="Tomato"
+            className="h-60 w-full object-cover group-hover:scale-110 transition duration-500"
+          />
+
+          <span className="absolute top-4 left-4 bg-[#166534] text-white text-xs px-3 py-1 rounded-full">
+            Organic
+          </span>
+        </div>
+
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="text-xl font-semibold">Organic Tomato</h3>
+
+          {/* Rating */}
+          <div className="flex items-center gap-1 mt-2 text-yellow-400 text-sm">
+            ⭐⭐⭐⭐⭐
+            <span className="text-gray-500 text-xs ml-2">(4.9)</span>
+          </div>
+
+          <p className="text-gray-600 mt-3">
+            Fresh farm-grown tomatoes full of natural nutrients.
+          </p>
+
+          {/* Price + Button */}
+          <div className="flex justify-between items-center mt-6">
+            <p className="text-[#166534] text-xl font-bold">
+              Rs. 120/kg
+            </p>
+
+            <button className="bg-[#166534] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-800 transition">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* SPINACH */}
+      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+        <div className="relative overflow-hidden">
+          <img
+            src={spinach}
+            alt="Spinach"
+            className="h-60 w-full object-cover group-hover:scale-110 transition duration-500"
+          />
+          <span className="absolute top-4 left-4 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
+            Fresh
+          </span>
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-semibold">Fresh Spinach</h3>
+
+          <div className="flex items-center gap-1 mt-2 text-yellow-400 text-sm">
+            ⭐⭐⭐⭐☆
+            <span className="text-gray-500 text-xs ml-2">(4.5)</span>
+          </div>
+
+          <p className="text-gray-600 mt-3">
+            Healthy leafy greens packed with iron and vitamins.
+          </p>
+
+          <div className="flex justify-between items-center mt-6">
+            <p className="text-[#166534] text-xl font-bold">
+              Rs. 80/kg
+            </p>
+
+            <button className="bg-[#166534] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-800 transition">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* CARROT */}
+      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+        <div className="relative overflow-hidden">
+          <img
+            src={carrot}
+            alt="Carrot"
+            className="h-60 w-full object-cover group-hover:scale-110 transition duration-500"
+          />
+          <span className="absolute top-4 left-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full">
+            Best Seller
+          </span>
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-semibold">Organic Carrot</h3>
+
+          <div className="flex items-center gap-1 mt-2 text-yellow-400 text-sm">
+            ⭐⭐⭐⭐⭐
+            <span className="text-gray-500 text-xs ml-2">(5.0)</span>
+          </div>
+
+          <p className="text-gray-600 mt-3">
+            Naturally grown carrots rich in beta-carotene.
+          </p>
+
+          <div className="flex justify-between items-center mt-6">
+            <p className="text-[#166534] text-xl font-bold">
+              Rs. 100/kg
+            </p>
+
+            <button className="bg-[#166534] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-800 transition">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* 3️⃣ HOW IT WORKS */}
      <section className="bg-white py-16 rounded-2xl border shadow-sm">
@@ -239,6 +375,29 @@ function Home() {
       </p>
     </div>
 
+  </div>
+</section>
+
+   {/* NEWSLETTER */}
+<section className="bg-[#166534] text-white py-20 rounded-2xl text-center">
+  <h2 className="text-4xl font-bold">
+    Stay Updated with Fresh Offers
+  </h2>
+
+  <p className="mt-4 text-green-100">
+    Subscribe to get weekly organic deals and updates.
+  </p>
+
+  <div className="mt-8 flex justify-center gap-4">
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="px-6 py-3 rounded-lg text-black w-72"
+    />
+
+    <button className="bg-white text-[#166534] px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+      Subscribe
+    </button>
   </div>
 </section>
 
