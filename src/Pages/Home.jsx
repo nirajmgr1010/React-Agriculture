@@ -112,7 +112,7 @@ function Home() {
     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
 
       {/* PRODUCT CARD */}
-      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+      <div className="group bg-white/80 backdrop-blur-md rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
 
         {/* Image */}
         <div className="relative overflow-hidden">
@@ -155,7 +155,7 @@ function Home() {
       </div>
 
       {/* SPINACH */}
-      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+      <div className="group bg-white/80 backdrop-blur-md rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
         <div className="relative overflow-hidden">
           <img
             src={spinach}
@@ -192,7 +192,7 @@ function Home() {
       </div>
 
       {/* CARROT */}
-      <div className="group bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border">
+      <div className="group bg-white/80 backdrop-blur-md rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
         <div className="relative overflow-hidden">
           <img
             src={carrot}
@@ -232,54 +232,98 @@ function Home() {
   </div>
 </section>
 
-      {/* 3️⃣ HOW IT WORKS */}
-     <section className="bg-white py-16 rounded-2xl border shadow-sm">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-semibold">
-      How AgroSmart Works
-    </h2>
-  </div>
 
-  <div className="grid md:grid-cols-3 gap-8 text-center px-6">
+{/* 3️⃣ HOW IT WORKS */}
+<section className="py-32 bg-gradient-to-b from-white via-green-50 to-white rounded-3xl">
+  <div className="max-w-7xl mx-auto px-6">
 
-    <div>
-      <div className="flex justify-center mb-4">
-        <img src={tomato} alt="" className="h-16 w-16 object-cover rounded-full"/>
-      </div>
-      <h3 className="font-semibold text-[#166534]">
-        Browse Products
-      </h3>
-      <p className="text-gray-600 mt-3">
-        Explore fresh organic items listed by farmers.
+    {/* Header */}
+    <div className="text-center mb-24">
+      <h2 className="text-4xl font-bold text-gray-900">
+        How AgroSmart Works
+      </h2>
+      <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Simple. Transparent. Farm-to-home in three easy steps.
       </p>
     </div>
 
-    <div>
-      <div className="flex justify-center mb-4">
-        <img src={spinach} alt="" className="h-16 w-16 object-cover rounded-full"/>
-      </div>
-      <h3 className="font-semibold text-[#166534]">
-        Place Order
-      </h3>
-      <p className="text-gray-600 mt-3">
-        Add products to cart and checkout securely.
-      </p>
-    </div>
+    {/* Steps */}
+    <div className="grid md:grid-cols-3 gap-14">
 
-    <div>
-      <div className="flex justify-center mb-4">
-        <img src={carrot} alt="" className="h-16 w-16 object-cover rounded-full"/>
+      {/* STEP 1 */}
+      <div className="group bg-white/80 backdrop-blur-lg p-12 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 text-center relative">
+
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-green-800 text-white h-16 w-16 flex items-center justify-center rounded-full text-xl font-bold shadow-xl">
+          01
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <div className="bg-green-100 p-5 rounded-2xl">
+            <img src={tomato} alt="" className="h-14 w-14 object-cover rounded-full"/>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mt-8">
+          Browse Products
+        </h3>
+
+        <p className="text-gray-600 mt-4 leading-relaxed">
+          Discover fresh organic produce directly from verified farmers.
+        </p>
       </div>
-      <h3 className="font-semibold text-[#166534]">
-        Track Delivery
-      </h3>
-      <p className="text-gray-600 mt-3">
-        Monitor order progress in real-time.
-      </p>
+
+
+      {/* STEP 2 */}
+      <div className="group bg-white/80 backdrop-blur-lg p-12 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 text-center relative">
+
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-green-800 text-white h-16 w-16 flex items-center justify-center rounded-full text-xl font-bold shadow-xl">
+          02
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <div className="bg-green-100 p-5 rounded-2xl">
+            <img src={spinach} alt="" className="h-14 w-14 object-cover rounded-full"/>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mt-8">
+          Place Order
+        </h3>
+
+        <p className="text-gray-600 mt-4 leading-relaxed">
+          Securely add items to cart and checkout in minutes.
+        </p>
+      </div>
+
+
+      {/* STEP 3 */}
+      <div className="group bg-white/80 backdrop-blur-lg p-12 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 text-center relative">
+
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-green-600 to-green-800 text-white h-16 w-16 flex items-center justify-center rounded-full text-xl font-bold shadow-xl">
+          03
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <div className="bg-green-100 p-5 rounded-2xl">
+            <img src={carrot} alt="" className="h-14 w-14 object-cover rounded-full"/>
+          </div>
+        </div>
+
+        <h3 className="text-xl font-semibold mt-8">
+          Track Delivery
+        </h3>
+
+        <p className="text-gray-600 mt-4 leading-relaxed">
+          Monitor your order status in real-time until delivery.
+        </p>
+      </div>
+
     </div>
 
   </div>
 </section>
+
+
 <section
   className="relative py-24 rounded-2xl text-center text-white"
   style={{
