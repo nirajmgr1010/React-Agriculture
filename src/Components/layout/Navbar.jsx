@@ -12,6 +12,20 @@ function Navbar() {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          
+          {/* Home Link */}
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "text-green-800"
+                : "text-gray-600 hover:text-green-700 transition"
+            }
+          >
+            Home
+          </NavLink>
+
           <NavLink
             to="/shop"
             className={({ isActive }) =>
