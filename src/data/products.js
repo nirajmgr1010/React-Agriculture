@@ -1,3 +1,6 @@
+import Tomato from "../assets/Images/Tomato.jpg";
+import Spinach from "../assets/Images/spinach.jpg";
+import Carrot from "../assets/Images/Carrot.jpg";
 const products = [
   {
     id: 1,
@@ -5,7 +8,7 @@ const products = [
     category: "Vegetable",
     price: 120,
     rating: 4.5,
-    image: "/images/tomato.jpg",
+    image: Tomato,
   },
   {
     id: 2,
@@ -13,15 +16,15 @@ const products = [
     category: "Vegetable",
     price: 80,
     rating: 4.2,
-    image: "/images/spinach.jpg",
+    image: Spinach,
   },
   {
     id: 3,
-    name: "Organic Apple",
+    name: "Organic Carrot",
     category: "Fruit",
     price: 250,
     rating: 4.8,
-    image: "/images/apple.jpg",
+    image: Carrot,
   },
 ];
 

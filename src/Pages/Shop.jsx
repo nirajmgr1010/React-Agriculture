@@ -84,29 +84,54 @@ function Shop() {
 
 
       {/* ================== 3️⃣ SEARCH + FILTER ================== */}
-      <section className="sticky top-0 bg-white z-20 py-6 shadow-md">
-        <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row gap-6 items-center justify-between">
+      <section className="relative -mt50 z-20">
+  <div className="max-w-[1200px] mx-auto">
 
-          <div className="flex-1 transition-all duration-300 hover:scale-[1.02]">
-            <ProductSearch
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            />
+    <div className="group bg-white/70 backdrop-blur-2xl rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-8 transition-all duration-500 hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
+
+      <div className="flex flex-col md:flex-row items-center gap-6">
+
+        {/* Search Input */}
+        <div className="relative flex-1 w-full">
+
+          <input
+            type="text"
+            placeholder="Search fresh organic products..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-6 py-4 rounded-2xl bg-gray-100 focus:bg-white focus:ring-2 focus:ring-[#166534] outline-none transition-all duration-300 text-lg shadow-inner"
+          />
+
+          {/* Search Icon */}
+          <div className="absolute right-5 top-4 text-gray-400 transition duration-300 group-focus-within:text-[#166534]">
+            🔍
           </div>
 
-          <select
-            value={sortOption}
-            onChange={(e) => setSortOption(e.target.value)}
-            className="px-6 py-3 rounded-xl bg-[#166534] text-white font-medium hover:bg-[#14532d] transition"
-          >
-            <option value="">Sort By</option>
-            <option value="low">Price: Low → High</option>
-            <option value="high">Price: High → Low</option>
-            <option value="rating">Top Rated</option>
-          </select>
         </div>
-      </section>
 
+        {/* Sort Button */}
+        <select
+          value={sortOption}
+          onChange={(e) => setSortOption(e.target.value)}
+          className="px-6 py-4 rounded-2xl bg-[#166534] text-white font-medium shadow-lg hover:bg-[#14532d] hover:scale-105 transition duration-300"
+        >
+          <option value="">Sort By</option>
+          <option value="low">Price: Low → High</option>
+          <option value="high">Price: High → Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+
+        {/* Result Counter */}
+        <div className="px-6 py-4 rounded-2xl bg-[#f59e0b]/10 text-[#f59e0b] font-semibold">
+          {filteredProducts.length} Products
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
       {/* ================== 4️⃣ PRODUCT GRID ================== */}
       <section className="py-20 max-w-[1600px] mx-auto">
