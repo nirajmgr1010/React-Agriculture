@@ -1,19 +1,33 @@
 import { useCart } from "../../context/CartContext";
 
 const CartItem = ({ item }) => {
-  const { increaseQty, decreaseQty, removeFromCart } = useCart();
+  const { removeFromCart, increaseQty, decreaseQty } = useCart();
 
   return (
-    <div className="flex justify-between items-center border p-4 rounded-xl mb-4">
-      <div>
-        <h2 className="font-semibold">{item.name}</h2>
-        <p>Rs {item.price}</p>
+    <div className="grid md:grid-cols-4 items-center border-b py-6 gap-4">
+
+      {/* Product */}
+      <div className="flex items-center gap-4">
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-16 h-16 object-cover border"
+        />
+        <span className="font-medium">
+          {item.name}
+        </span>
       </div>
 
+      {/* Price */}
+      <div>
+        Rs {item.price}
+      </div>
+
+      {/* Quantity */}
       <div className="flex items-center gap-3">
         <button
           onClick={() => decreaseQty(item.id)}
-          className="px-3 bg-gray-200 rounded"
+          className="border px-2"
         >
           -
         </button>
@@ -22,18 +36,24 @@ const CartItem = ({ item }) => {
 
         <button
           onClick={() => increaseQty(item.id)}
-          className="px-3 bg-gray-200 rounded"
+          className="border px-2"
         >
           +
         </button>
+
+        <button
+          onClick={() => removeFromCart(item.id)}
+          className="ml-4 text-sm text-red-600"
+        >
+          Remove
+        </button>
       </div>
 
-      <button
-        onClick={() => removeFromCart(item.id)}
-        className="text-red-500"
-      >
-        Remove
-      </button>
+      {/* Total */}
+      <div className="text-right font-medium">
+        Rs {item.price * item.quantity}
+      </div>
+
     </div>
   );
 };
