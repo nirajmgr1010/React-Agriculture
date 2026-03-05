@@ -1,6 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-
+import { useCart } from "../../context/CartContext";
+import { useState } from "react";
+import CartDrawer from "../cart/CartDrawer";
 function Navbar() {
+  const { cartItems } = useCart();
+const [isOpen, setIsOpen] = useState(false);
+
+const totalQuantity = cartItems.reduce(
+  (acc, item) => acc + item.quantity,
+  0
+);
   return (
     <header className="bg-white shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -45,7 +54,18 @@ function Navbar() {
                 : "text-gray-600 hover:text-green-700 transition"
             }
           >
-            Cart
+            <button
+  onClick={() => setIsOpen(true)}
+  className="relative text-gray-600 hover:text-green-700 transition text-sm font-medium"
+>
+  Cart
+
+  {totalQuantity > 0 && (
+    <span className="absolute -top-2 -right-4 bg-green-800 text-white text-xs px-2 py-0.5 rounded-full">
+      {totalQuantity}
+    </span>
+  )}
+</button>
           </NavLink>
 
           <NavLink
@@ -80,6 +100,7 @@ function Navbar() {
         </Link>
 
       </div>
+      <CartDrawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }

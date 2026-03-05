@@ -1,0 +1,26 @@
+const CheckoutModal = ({ open, onClose }) => {
+  if (!open) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+      <div className="bg-white p-8 w-96 text-center">
+        <h2 className="text-lg font-semibold mb-4">
+          Order Placed Successfully
+        </h2>
+
+        <p className="text-gray-600 mb-6">
+          Thank you for your purchase.
+        </p>
+
+        <button
+          onClick={onClose}
+          className="border px-6 py-2 hover:bg-black hover:text-white transition"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default CheckoutModal;
