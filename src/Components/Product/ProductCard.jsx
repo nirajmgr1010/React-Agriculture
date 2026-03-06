@@ -1,7 +1,11 @@
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../Context/CartContext";
+import { useWishlist } from "../../Context/WishlistContext";
+import { Link } from "react-router-dom";
 
 function ProductCard({ id, name, price, rating, image, category }) {
+
   const { addToCart } = useCart();
+  const { addToWishlist, isInWishlist } = useWishlist();
 
   const product = { id, name, price, rating, image, category };
 
@@ -10,26 +14,47 @@ function ProductCard({ id, name, price, rating, image, category }) {
 
       {/* Image Section */}
       <div className="relative overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-60 object-cover transition duration-700 group-hover:scale-110"
-        />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        {/* Wishlist Button */}
+        <button
+          onClick={() => addToWishlist(product)}
+          className="absolute top-4 left-4 z-10 bg-white rounded-full w-9 h-9 flex items-center justify-center shadow hover:scale-110 transition"
+        >
+          {isInWishlist(id) ? "❤️" : "🤍"}
+        </button>
 
+        {/* Rating Badge */}
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-sm font-medium text-[#166534] shadow-md">
           ⭐ {rating}
         </div>
+
+        {/* Product Image */}
+        <Link to={`/product/${id}`}>
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-60 object-cover transition duration-700 group-hover:scale-110"
+          />
+        </Link>
+
+        {/* Hover Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
       </div>
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#166534] transition">
-          {name}
-        </h3>
 
+        {/* Product Name */}
+        <Link to={`/product/${id}`}>
+          <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#166534] transition">
+            {name}
+          </h3>
+        </Link>
+
+        {/* Price + Cart */}
         <div className="mt-3 flex items-center justify-between">
+
           <span className="text-2xl font-bold text-[#166534]">
             रु {price}
           </span>
@@ -40,8 +65,11 @@ function ProductCard({ id, name, price, rating, image, category }) {
           >
             Add to Cart
           </button>
+
         </div>
+
       </div>
+
     </div>
   );
 }
