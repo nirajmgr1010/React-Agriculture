@@ -1,8 +1,7 @@
 import { useState, useMemo } from "react";
 import products from "../data/products";
 import ProductCard from "../components/product/ProductCard";
-import ProductFilter from "../components/product/ProductFilter";
-import ProductSearch from "../components/product/ProductSearch";
+
 
 function Shop() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,7 +12,7 @@ function Shop() {
     let filtered = products.filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
+    
     if (category) {
       filtered = filtered.filter(
         (product) => product.category === category

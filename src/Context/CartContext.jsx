@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import useLocalStorage from "../Hooks/useLocalStorage";
 import calculateTotal from "../utils/calculateTotal";
 
 const CartContext = createContext();

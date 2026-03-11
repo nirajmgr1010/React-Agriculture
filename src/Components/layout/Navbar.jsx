@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../Context/CartContext";
 import { useState } from "react";
 import CartDrawer from "../cart/CartDrawer";
 function Navbar() {

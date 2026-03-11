@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; //It allows you to read parameters from the URL.
 import products  from "../data/products";
 import  farmers  from "../data/farmers";
 
