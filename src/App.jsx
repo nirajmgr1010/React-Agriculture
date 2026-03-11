@@ -4,10 +4,8 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
-import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
-import Dashboard from "./pages/Dashboard";
 import Productdetails from "./Pages/Productdetails";
 
 function App() {
@@ -22,7 +20,6 @@ function App() {
           <Route path="/product/:id" element={<Productdetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </main>
 

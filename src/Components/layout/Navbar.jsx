@@ -79,16 +79,6 @@ const totalQuantity = cartItems.reduce(
             Wishlist
           </NavLink>
 
-          <NavLink
-            to="/dashboard"
-            className={({ isActive }) =>
-              isActive
-                ? "text-green-800"
-                : "text-gray-600 hover:text-green-700 transition"
-            }
-          >
-            Dashboard
-          </NavLink>
         </nav>
 
         {/* CTA Button */}
