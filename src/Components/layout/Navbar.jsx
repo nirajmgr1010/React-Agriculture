@@ -2,14 +2,16 @@ import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
 import { useState } from "react";
 import CartDrawer from "../cart/CartDrawer";
+
 function Navbar() {
   const { cartItems } = useCart();
-const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-const totalQuantity = cartItems.reduce(
-  (acc, item) => acc + item.quantity,
-  0
-);
+  const totalQuantity = cartItems.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-100">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -21,8 +23,8 @@ const totalQuantity = cartItems.reduce(
 
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-          
-          {/* Home Link */}
+
+          {/* Home */}
           <NavLink
             to="/"
             end
@@ -35,6 +37,7 @@ const totalQuantity = cartItems.reduce(
             Home
           </NavLink>
 
+          {/* Shop */}
           <NavLink
             to="/shop"
             className={({ isActive }) =>
@@ -46,38 +49,43 @@ const totalQuantity = cartItems.reduce(
             Shop
           </NavLink>
 
+          {/* About */}
           <NavLink
-            to="/cart"
+            to="/about"
             className={({ isActive }) =>
               isActive
                 ? "text-green-800"
                 : "text-gray-600 hover:text-green-700 transition"
             }
           >
-            <button
-  onClick={() => setIsOpen(true)}
-  className="relative text-gray-600 hover:text-green-700 transition text-sm font-medium"
->
-  Cart
-
-  {totalQuantity > 0 && (
-    <span className="absolute -top-2 -right-4 bg-green-800 text-white text-xs px-2 py-0.5 rounded-full">
-      {totalQuantity}
-    </span>
-  )}
-</button>
+            About
           </NavLink>
 
+          {/* Contact */}
           <NavLink
-            to="/wishlist"
+            to="/contact"
             className={({ isActive }) =>
               isActive
                 ? "text-green-800"
                 : "text-gray-600 hover:text-green-700 transition"
             }
           >
-            Wishlist
+            Contact
           </NavLink>
+
+          {/* Cart */}
+          <button
+            onClick={() => setIsOpen(true)}
+            className="relative text-gray-600 hover:text-green-700 transition text-sm font-medium"
+          >
+            Cart
+
+            {totalQuantity > 0 && (
+              <span className="absolute -top-2 -right-4 bg-green-800 text-white text-xs px-2 py-0.5 rounded-full">
+                {totalQuantity}
+              </span>
+            )}
+          </button>
 
         </nav>
 
@@ -90,6 +98,7 @@ const totalQuantity = cartItems.reduce(
         </Link>
 
       </div>
+
       <CartDrawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );

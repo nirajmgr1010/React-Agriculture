@@ -1,11 +1,9 @@
 import { useCart } from "../../Context/CartContext";
-import { useWishlist } from "../../Context/WishlistContext";
 import { Link } from "react-router-dom";
 
 function ProductCard({ id, name, price, rating, image, category }) {
 
   const { addToCart } = useCart();
-  const { addToWishlist, isInWishlist } = useWishlist();
 
   const product = { id, name, price, rating, image, category };
 
@@ -14,14 +12,6 @@ function ProductCard({ id, name, price, rating, image, category }) {
 
       {/* Image Section */}
       <div className="relative overflow-hidden">
-
-        {/* Wishlist Button */}
-        <button
-          onClick={() => addToWishlist(product)}
-          className="absolute top-4 left-4 z-10 bg-white rounded-full w-9 h-9 flex items-center justify-center shadow hover:scale-110 transition"
-        >
-          {isInWishlist(id) ? "❤️" : "🤍"}
-        </button>
 
         {/* Rating Badge */}
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-sm font-medium text-[#166534] shadow-md">
