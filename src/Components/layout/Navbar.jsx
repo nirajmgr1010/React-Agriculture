@@ -1,11 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../Context/CartContext";
-import { useState } from "react";
-import CartDrawer from "../cart/CartDrawer";
 
 function Navbar() {
   const { cartItems } = useCart();
-  const [isOpen, setIsOpen] = useState(false);
 
   const totalQuantity = cartItems.reduce(
     (acc, item) => acc + item.quantity,
@@ -74,18 +71,17 @@ function Navbar() {
           </NavLink>
 
           {/* Cart */}
-          <button
-            onClick={() => setIsOpen(true)}
+          <Link
+            to="/cart"
             className="relative text-gray-600 hover:text-green-700 transition text-sm font-medium"
           >
             Cart
-
             {totalQuantity > 0 && (
               <span className="absolute -top-2 -right-4 bg-green-800 text-white text-xs px-2 py-0.5 rounded-full">
                 {totalQuantity}
               </span>
             )}
-          </button>
+          </Link>
 
         </nav>
 
@@ -98,8 +94,6 @@ function Navbar() {
         </Link>
 
       </div>
-
-      <CartDrawer isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </header>
   );
 }
